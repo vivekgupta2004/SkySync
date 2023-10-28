@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +13,245 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+p {
+  font-size: 1.6rem;
+
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error h1 {
+  font-size: 3rem;
+}
+
+.location p {
+  font-size: 4rem;
+}
+
+.weather-icon img {
+  width: 8rem;
+}
+.loading-animation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 9999;
+}
+
+.loadingtext {
+  margin-top: 1rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.app {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  background-color: gray;
+  color: #fff;
+  background: url("./backgroundImage/quino-al-mBQIfKlvowM-unsplash.jpg") no-repeat center center/cover;
+  animation: slideshow 50s infinite;
+}
+
+.app:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  animation: slideshow 50s infinite;
+  background-size: cover;
+  background-position: center;
+}
+
+.app .search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.app .search-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.2rem;
+  color: #f8f8f8;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.app .search-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2rem;
+}
+
+.app input {
+  padding: .7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  color: #f8f8f8;
+  margin-right: 10px;
+}
+
+::placeholder {
+  color: #f8f8f8;
+}
+
+.container {
+  max-width: 700px;
+  height: 700px;
+  margin: auto;
+  padding: 0 1rem;
+  position: relative;
+  top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.app .top {
+  width: 100%;
+  margin: 1rem auto;
+
+}
+
+.app .description {
+  position: relative;
+  bottom: -75%;
+  right: -70%;
+  transform-origin: 0 0;
+  transform: rotate(269deg);
+}
+
+.app .description p {
+  font-size: 1.5rem;
+}
+
+.app .bottom {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: rgb(255, 255, 255, 0.2);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+@keyframes slideshow {
+
+  0%,
+  100% {
+    background-image: url('./backgroundImage/bg6.webp');
+  }
+
+  16.666% {
+    background-image: url('./backgroundImage/bg2.jpeg');
+  }
+
+  33.333% {
+    background-image: url('./backgroundImage/bg3.jpg');
+  }
+
+  50% {
+    background-image: url('./backgroundImage/bg4.jpeg');
+  }
+
+  66.666% {
+    background-image: url('./backgroundImage/bg5.jpeg');
+  }
+
+  83.333% {
+    background-image: url('./backgroundImage/download.jpeg');
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+
+  .app .description {
+    bottom: -85%;
+    right: -65%;
+  }
+
+  .app .description p {
+    font-size: 1.3rem;
+  }
+
+
+}
+
+@media screen and (max-width: 480px) {
+  .app .top {
+    margin: 2rem auto;
+  }
+
+  .app .bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .app .weather-icon img {
+    width: 50px;
+    height: 50px;
+
+  }
+
+  .app input,
+  .app .search-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+
+  }
+
+  .app .description {
+    bottom: -80%;
+    right: -70%;
+  }
+
+  .app .description p {
+    font-size: 1.3rem;
+  }
+
 }
