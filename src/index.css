@@ -1,8 +1,10 @@
-* {
+@import 'normalize.css';
+*{
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 0;  
 }
+
 
 body {
   margin: 0;
@@ -11,15 +13,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 15px; 
 }
 
-p {
-  font-size: 1.6rem;
-
+p{
+  font-size: 1.6 rem;
 }
 
-h1 {
+h1{
   font-size: 6rem;
+  font-weight: 700;
 }
 
 .error {
@@ -28,17 +31,6 @@ h1 {
   align-items: center;
 }
 
-.error h1 {
-  font-size: 3rem;
-}
-
-.location p {
-  font-size: 4rem;
-}
-
-.weather-icon img {
-  width: 8rem;
-}
 .loading-animation {
   display: flex;
   flex-direction: column;
@@ -49,7 +41,7 @@ h1 {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: white;
   z-index: 9999;
 }
 
@@ -60,17 +52,40 @@ h1 {
   color: #000;
 }
 
+
 .app {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  background-color: gray;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
-  background: url("./backgroundImage/quino-al-mBQIfKlvowM-unsplash.jpg") no-repeat center center/cover;
+  background-image: url('./Background-image/wendy-bandurski-miller-_pSwppzjEEw-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
   animation: slideshow 50s infinite;
 }
 
-.app:before {
+.time {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #f8f8f8;
+  margin-top: 0.5rem;
+}
+
+.app .weather-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.app .weather-icon img {
+  width: 70px; 
+  height: 70px;
+  background-color: #898787;
+  margin-top: 25%;
+  border-radius: 25px;
+}
+
+.app::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -83,11 +98,20 @@ h1 {
   background-position: center;
 }
 
-.app .search {
+.app .search-box {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding-top: 2rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+  padding-top: 10px;
+}
+
+.app .search-input-container {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  padding: 0.7rem 1rem;
 }
 
 .app .search-button {
@@ -105,153 +129,148 @@ h1 {
 }
 
 .app .search-button:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  
 }
 
 .app input {
-  padding: .7rem 1.5rem;
+  padding: 0.7rem 1.5rem;
   font-size: 1.2rem;
   border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  background: rgba(255, 255, 255, 0.1);
-  color: #f8f8f8;
+  border: 1px solid rgba(255,255,255,0.8);
+  background: rgba(255, 255,255,0.1);
+  color:#f8f8f8;
   margin-right: 10px;
+  background: none;
+  border: none;
+  outline: none;
+  color:#f8f8f8;
 }
 
-::placeholder {
+::placeholder{
   color: #f8f8f8;
 }
 
-.container {
+.container{
   max-width: 700px;
   height: 700px;
   margin: auto;
-  padding: 0 1rem;
+  pad: 0 1rem;
   position: relative;
-  top: 5%;
+  top: 10%;
+  bottom: 10%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-align: center;
 }
 
 .app .top {
   width: 100%;
-  margin: 1rem auto;
-
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.app .description {
+.app .description{
   position: relative;
-  bottom: -75%;
-  right: -70%;
+  right: -25%;
+  bottom: 18%;
   transform-origin: 0 0;
-  transform: rotate(269deg);
-}
-
-.app .description p {
-  font-size: 1.5rem;
+  transform: rotate(270deg);
+  margin-top: 1rem;
 }
 
 .app .bottom {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   text-align: center;
-  width: 100%;
+  width: 90%;
   margin: 1rem auto;
   padding: 1rem;
   border-radius: 12px;
-  background-color: rgb(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-.bold {
-  font-weight: 700;
+.bold{
+  font-weight:700;
+}
+
+.location {
+  font-weight: 500;
+  font-size: 1.5rem;
+
+}
+.container_date{
+  margin-top: 8rem;
+  text-align: center;
+}
+.date-time p{
+  font-size: 2rem;
 }
 
 @keyframes slideshow {
-
-  0%,
-  100% {
-    background-image: url('./backgroundImage/bg6.webp');
+  0%, 100% {
+    background-image: url('./Background-image/wendy-bandurski-miller-_pSwppzjEEw-unsplash.jpg');
   }
-
   16.666% {
-    background-image: url('./backgroundImage/bg2.jpeg');
+    background-image: url('./Background-image/clouds-and-sun-1382791.jpg');
   }
-
   33.333% {
-    background-image: url('./backgroundImage/bg3.jpg');
+    background-image: url('./Background-image/dave-lsoogGC_5dg-unsplash.jpg');
   }
-
   50% {
-    background-image: url('./backgroundImage/bg4.jpeg');
+    background-image: url('./Background-image/bg3.jpg');
   }
-
   66.666% {
-    background-image: url('./backgroundImage/bg5.jpeg');
+    background-image: url('./Background-image/oc-gonzalez-A-11N8ItHZo-unsplash.jpg');
   }
-
   83.333% {
-    background-image: url('./backgroundImage/download.jpeg');
+    background-image: url('./Background-image/quino-al-mBQIfKlvowM-unsplash.jpg');
   }
 }
-
+ 
 @media screen and (max-width: 768px) {
   body {
     font-size: 14px;
   }
-
   h1 {
     font-size: 4rem;
   }
-
   p {
     font-size: 1.4rem;
   }
 
-  .app .description {
-    bottom: -85%;
-    right: -65%;
-  }
-
-  .app .description p {
-    font-size: 1.3rem;
-  }
-
-
 }
+
 
 @media screen and (max-width: 480px) {
   .app .top {
     margin: 2rem auto;
   }
-
+  .app .description{
+    
+    margin-left: 4rem;
+    margin-top: 1rem;
+   
+  }
   .app .bottom {
     flex-direction: column;
     text-align: center;
   }
-
   .app .weather-icon img {
     width: 50px;
     height: 50px;
-
+    
   }
-
   .app input,
   .app .search-button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
-
-  }
-
-  .app .description {
-    bottom: -80%;
-    right: -70%;
-  }
-
-  .app .description p {
-    font-size: 1.3rem;
+    
   }
 
 }
+
+
